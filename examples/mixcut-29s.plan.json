@@ -1,0 +1,348 @@
+{
+  "meta": {
+    "title": "示例：素材+文案→剪映混剪",
+    "canvas": "portrait",
+    "fps": 30,
+    "media_dir": "footage"
+  },
+  "voice": {
+    "mode": "tts",
+    "provider": "openai",
+    "model": "gpt-4o-mini-tts",
+    "voice": "onyx",
+    "instructions": "用专业、沉稳、有信念感的中文旁白语气朗读，语速中等偏快，咬字清晰，句尾自然下沉。",
+    "lead_in": 0.55,
+    "outro_tail": 2.6
+  },
+  "music": {
+    "path": "work/assets/bgm/track_bed.wav",
+    "volume": 0.25
+  },
+  "beats": [
+    {
+      "id": "b01",
+      "text": "同样的产品，为什么有人起量，有人卡住？",
+      "gap_after": 0.25
+    },
+    {
+      "id": "b02",
+      "text": "差的不是镜头前的卖点。",
+      "gap_after": 0.7
+    },
+    {
+      "id": "b03",
+      "text": "是藏在后端的这三件事。",
+      "gap_after": 0.25
+    },
+    {
+      "id": "b04",
+      "text": "研发先把配方跑通。",
+      "gap_after": 0.25
+    },
+    {
+      "id": "b05",
+      "text": "品控把每一批过一遍。",
+      "gap_after": 0.25
+    },
+    {
+      "id": "b06",
+      "text": "产线决定你能跑多快。",
+      "gap_after": 0.7
+    },
+    {
+      "id": "b07",
+      "text": "仓储和物流，决定你能不能按时到货。",
+      "gap_after": 0.25
+    },
+    {
+      "id": "b08",
+      "text": "一条链跑通，才敢放量。",
+      "gap_after": 0.0
+    }
+  ],
+  "sections": [
+    {
+      "key": "s1",
+      "beats": [
+        "b01",
+        "b02"
+      ],
+      "label": "01",
+      "label_text": "现象",
+      "headline": "起量快，卡得更快",
+      "shots": [
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 1.30,
+          "out": 2.50,
+          "framing": "matte",
+          "move": "in",
+          "note": "桌上安瓶产品特写"
+        },
+        {
+          "clip": "841933a93d9e97bd7e1e5ddf7ad0b877.mov",
+          "in": 0.15,
+          "out": 1.45,
+          "framing": "fill",
+          "move": "out",
+          "crop": "50% 50%",
+          "note": "手持两瓶对比"
+        },
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 2.58,
+          "out": 3.80,
+          "framing": "matte",
+          "move": "in",
+          "note": "办公室双屏看数据"
+        },
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 3.82,
+          "out": 5.00,
+          "framing": "matte",
+          "move": "out",
+          "note": "手机上看曲线下跌"
+        },
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 5.05,
+          "out": 6.55,
+          "framing": "matte",
+          "move": "in",
+          "note": "桌前一摞文件，揉太阳穴"
+        }
+      ]
+    },
+    {
+      "key": "s2",
+      "beats": [
+        "b03",
+        "b04",
+        "b05",
+        "b06"
+      ],
+      "label": "02",
+      "label_text": "后端",
+      "headline": "撑得住的三个前提",
+      "shots": [
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 0.08,
+          "out": 1.22,
+          "framing": "matte",
+          "move": "in",
+          "note": "玻璃瓶产线特写"
+        },
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 11.72,
+          "out": 13.10,
+          "framing": "matte",
+          "move": "out",
+          "note": "手套持样品瓶"
+        },
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 13.15,
+          "out": 14.90,
+          "framing": "matte",
+          "move": "in",
+          "note": "显微镜检测"
+        },
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 6.58,
+          "out": 7.40,
+          "framing": "matte",
+          "move": "out",
+          "note": "拿笔核对资料"
+        },
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 10.38,
+          "out": 11.65,
+          "framing": "matte",
+          "move": "in",
+          "note": "洁净车间全景"
+        },
+        {
+          "clip": "074edd863a80466311cb2faa06f92e7e.mov",
+          "in": 9.18,
+          "out": 10.30,
+          "framing": "matte",
+          "move": "out",
+          "note": "无尘服工人操作设备"
+        },
+        {
+          "clip": "841933a93d9e97bd7e1e5ddf7ad0b877.mov",
+          "in": 12.45,
+          "out": 14.90,
+          "framing": "fill",
+          "move": "in",
+          "crop": "46% 50%",
+          "note": "灌装产线"
+        }
+      ]
+    },
+    {
+      "key": "s3",
+      "beats": [
+        "b07",
+        "b08"
+      ],
+      "label": "03",
+      "label_text": "交付",
+      "shots": [
+        {
+          "clip": "841933a93d9e97bd7e1e5ddf7ad0b877.mov",
+          "in": 1.55,
+          "out": 3.00,
+          "framing": "fill",
+          "move": "in",
+          "crop": "50% 50%",
+          "note": "仓库里推货"
+        },
+        {
+          "clip": "841933a93d9e97bd7e1e5ddf7ad0b877.mov",
+          "in": 3.10,
+          "out": 4.50,
+          "framing": "fill",
+          "move": "out",
+          "crop": "45% 50%",
+          "note": "叉车装货柜"
+        },
+        {
+          "clip": "841933a93d9e97bd7e1e5ddf7ad0b877.mov",
+          "in": 4.60,
+          "out": 5.95,
+          "framing": "matte",
+          "move": "in",
+          "note": "会议室对计划"
+        },
+        {
+          "clip": "841933a93d9e97bd7e1e5ddf7ad0b877.mov",
+          "in": 6.05,
+          "out": 7.80,
+          "framing": "matte",
+          "move": "out",
+          "note": "航拍产业园"
+        },
+        {
+          "clip": "841933a93d9e97bd7e1e5ddf7ad0b877.mov",
+          "in": 10.45,
+          "out": 12.30,
+          "framing": "matte",
+          "move": "in",
+          "note": "数字化系统/AI 屏"
+        },
+        {
+          "clip": "841933a93d9e97bd7e1e5ddf7ad0b877.mov",
+          "in": 7.85,
+          "out": 9.20,
+          "framing": "fill",
+          "move": "out",
+          "crop": "50% 50%",
+          "note": "成品陈列"
+        }
+      ]
+    }
+  ],
+  "subtitles": {
+    "b01": [
+      [
+        "同样的产品，"
+      ],
+      [
+        "为什么有人起量，",
+        "有人卡住？"
+      ]
+    ],
+    "b02": [
+      [
+        "差的不是",
+        "镜头前的卖点。"
+      ]
+    ],
+    "b03": [
+      [
+        "是藏在后端的",
+        "这三件事。"
+      ]
+    ],
+    "b04": [
+      [
+        "研发先把配方跑通。"
+      ]
+    ],
+    "b05": [
+      [
+        "品控把每一批",
+        "过一遍。"
+      ]
+    ],
+    "b06": [
+      [
+        "产线决定",
+        "你能跑多快。"
+      ]
+    ],
+    "b07": [
+      [
+        "仓储和物流，"
+      ],
+      [
+        "决定你能不能",
+        "按时到货。"
+      ]
+    ],
+    "b08": [
+      [
+        "一条链跑通，",
+        "才敢放量。"
+      ]
+    ]
+  },
+  "cards": [
+    {
+      "id": "step",
+      "section": "s2",
+      "rows": [
+        {
+          "beat": "b04",
+          "text": "01  配方研发"
+        },
+        {
+          "beat": "b05",
+          "text": "02  批次品控"
+        },
+        {
+          "beat": "b06",
+          "text": "03  稳定产能"
+        }
+      ]
+    }
+  ],
+  "endcard": {
+    "section": "s3",
+    "lines": [
+      {
+        "beat": "b08",
+        "text": "一条链跑通\n才敢放量",
+        "role": "headline"
+      }
+    ]
+  },
+  "style": {
+    "subtitle_size": 7.0,
+    "headline_size": 9.5,
+    "card_size": 5.0,
+    "video_track": "画面",
+    "voice_track": "配音",
+    "music_track": "BGM",
+    "subtitle_track": "字幕",
+    "headline_track": "标题",
+    "label_track": "栏目",
+    "endcard_track": "落版"
+  }
+}

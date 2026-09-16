@@ -1,0 +1,4 @@
+# 配音：OpenAI TTS 的 HTTP 客户端
+requests>=2.31
+# 草稿写入层（jianying-editor 里的 pyJianYingDraft）读素材元信息要用
+pymediainfo>=6.0

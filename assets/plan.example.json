@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "示例项目",
+    "canvas": "portrait",
+    "fps": 30,
+    "media_dir": "footage"
+  },
+  "voice": {
+    "mode": "tts",
+    "provider": "openai",
+    "model": "gpt-4o-mini-tts",
+    "voice": "onyx",
+    "instructions": "用专业、沉稳、有信念感的中文旁白语气朗读，语速中等偏快，咬字清晰，句尾自然下沉。",
+    "lead_in": 0.55,
+    "outro_tail": 3.2
+  },
+  "music": {
+    "path": "assets/bgm/track.wav",
+    "volume": 0.22
+  },
+  "beats": [
+    { "id": "b01", "text": "你有没有发现，同一个品类里，品牌换了一茬又一茬。", "gap_after": 0.25 },
+    { "id": "b02", "text": "起量很快，消失更快。", "gap_after": 0.7 },
+    { "id": "b03", "text": "问题不在流量，在后端撑不撑得住。", "gap_after": 0.8 }
+  ],
+  "sections": [
+    {
+      "key": "s1",
+      "beats": ["b01", "b02"],
+      "label": "01",
+      "label_text": "现象",
+      "headline": "换了一茬又一茬",
+      "shots": [
+        { "clip": "A_wide.mov", "in": 0.3, "out": 1.9, "framing": "fill", "move": "in", "crop": "50% 46%", "note": "开场全景" },
+        { "clip": "B_curve.mov", "in": 7.1, "out": 8.3, "framing": "fill", "move": "out", "note": "增长曲线" }
+      ]
+    },
+    {
+      "key": "s2",
+      "beats": ["b03"],
+      "label": "02",
+      "label_text": "根因",
+      "headline": "问题不在流量",
+      "shots": [
+        { "clip": "C_line.mov", "in": 9.5, "out": 10.8, "framing": "matte", "move": "in", "note": "产线" },
+        { "clip": "D_lab.mov", "in": 6.4, "out": 7.6, "framing": "matte", "move": "out", "note": "实验室" }
+      ]
+    }
+  ],
+  "subtitles": {
+    "b01": [["你有没有发现，"], ["同一个品类里，", "品牌换了一茬又一茬。"]],
+    "b02": [["起量很快，", "消失更快。"]],
+    "b03": [["问题不在流量，", "在后端撑不撑得住。"]]
+  },
+  "keywords": {
+    "b02": ["消失更快"],
+    "b03": ["撑不撑得住"]
+  },
+  "cards": [
+    {
+      "id": "steps",
+      "section": "s2",
+      "rows": [
+        { "beat": "b03", "text": "01  稳定的产能" },
+        { "beat": "b03", "text": "02  可控的品控" }
+      ]
+    }
+  ],
+  "endcard": {
+    "section": "s2",
+    "lines": [
+      { "beat": "b03", "text": "撑得住，才做得大", "role": "headline" }
+    ],
+    "brand": { "text": "示例品牌", "sub": "供应链确定性", "delay": 1.2 }
+  },
+  "style": {
+    "subtitle_size": 7.0,
+    "headline_size": 9.5,
+    "card_size": 5.0,
+    "move_zoom": 0.07,
+    "video_track": "画面",
+    "voice_track": "配音",
+    "music_track": "BGM",
+    "subtitle_track": "字幕",
+    "headline_track": "标题",
+    "label_track": "栏目",
+    "endcard_track": "落版"
+  }
+}
