@@ -3,7 +3,7 @@ name: footage-to-jianying
 description: 把一堆原始素材（视频/图片）加一段口播文案，做成可直接继续剪辑的剪映专业版工程（草稿），并打包成能发给别人导入的文件。当用户给出素材文件夹 + 文案，要求"剪成一条片子""出一版剪映工程""发给别人导入剪映"时使用。不适合：只烧字幕、只剪单个片段、CapCut 国际版或手机端剪映、纯动画无实拍素材。
 metadata:
   short-description: 素材 + 文案 → 剪映工程
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # 素材 + 文案 → 剪映工程
@@ -55,12 +55,17 @@ python3 -m venv <本 skill 目录>/.venv && <本 skill 目录>/.venv/bin/python 
 5. **落草稿** —
    `python scripts/build_jianying_draft.py plan.json --resolved work/resolved.json --draft-name "<项目名>"`
    写草稿前确认剪映已退出：`python scripts/jianying_import.py --check`
-6. **导入剪映（必须做的一步）** —
-   `python scripts/jianying_import.py --draft-name "<项目名>" --quit-first`
+6. **导入剪映 + 打开草稿（必须做的一步）** —
+   `python scripts/jianying_import.py --draft-name "<项目名>" --quit-first --open`
    剪映的草稿目录就是它的导入目录，所以校验完直接唤起剪映即可：草稿会出现在首页「本地草稿」
-   第一项（按修改时间排序）。`--quit-first` 让剪映重新读取目录，避免它用旧缓存。
-   如果当前环境有 computer-use 能力，**再在剪映窗口里点开这条草稿并截图确认**，把"已导入"变成
-   看得见的结果；没有 UI 能力时，把草稿路径和"打开剪映首页第一项"讲清楚。
+   第一项（按修改时间排序）。`--quit-first` 让剪映重新读取目录，避免它用旧缓存；
+   `--open` 会让脚本带上 `--draft_path` 尽力直接打开这条草稿，并**盯草稿目录的时间戳**确认
+   "真的打开了"——剪映打开一条草稿会把目录重写成自己的格式（多出 `Timelines/`、`Resources/`，
+   `draft_info.json` 变密文），没打开过的草稿不具备这些特征。
+   **这一步要的是"看得见"，不是"已导入"**：脚本没拿到打开信号时，必须接着做——
+   有 computer-use 能力就自己在剪映首页点开这条草稿并截图确认（画面上要能看到自己的画面/字幕/图卡），
+   没有 UI 能力就把草稿绝对路径 + "首页本地草稿第一项"明确讲清楚。
+   **禁止只丢一句"已导入，去首页第一项打开"就收工。**
 7. **打包给对方（需要时才做）** —
    `python scripts/package_draft.py --resolved work/resolved.json --draft-name "<项目名>" --out ~/Desktop`
 
@@ -80,6 +85,8 @@ python3 -m venv <本 skill 目录>/.venv && <本 skill 目录>/.venv/bin/python 
 - **剪映的 `transform_y` 向上为正。** 想放在画面上方用正值，下方用负值——和常规屏幕坐标相反。
 - **`move` 现在是真关键帧。** `in`/`out` 会写成缩放关键帧（缓入缓出，幅度由 `style.move_zoom` 控制），
   不写 `move` 的镜头保持静止。
+- **交付前必须真的打开过那条草稿。** 判据是脚本拿到"草稿目录被剪映重写"的信号，或者自己点开并
+  截图确认过；草稿损坏、轨道重叠、素材丢失只有打开才看得见，`--open` 没信号不算完成。
 - **素材是按绝对路径引用的。** 草稿文件夹单独发给别人必然"素材丢失"，必须连素材一起打包含说明。
 - **打包要在剪映关闭时做。** 剪映打开草稿后会把它重新保存成加密格式、还写 `.locked` 和缓存，
   这时复制会拿到不一致的快照。

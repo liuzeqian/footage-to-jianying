@@ -168,13 +168,20 @@ python3 ~/Desktop/skills/footage-to-jianying/scripts/build_jianying_draft.py pla
   --resolved work/resolved.json --draft-name "我的混剪"
 ```
 
-**⑥ 唤起剪映**
+**⑥ 唤起剪映并打开草稿**
 
 ```bash
 python3 ~/Desktop/skills/footage-to-jianying/scripts/jianying_import.py \
-  --draft-name "我的混剪" --quit-first
-# 草稿目录就是剪映的导入目录，唤起后它出现在首页「本地草稿」第一项
+  --draft-name "我的混剪" --quit-first --open
 ```
+
+草稿目录就是剪映的导入目录，唤起后它会出现在首页「本地草稿」第一项。
+`--open` 会让脚本带上 `--draft_path` 尽力直接打开这条草稿，并**盯草稿目录的时间戳**确认真的打开了
+（剪映打开草稿会把目录重写成自己的格式：多出 `Timelines/`、`Resources/`，`draft_info.json` 变密文；
+没打开过的草稿没有这些特征）。拿不到信号时它不会假装成功，而是打印手动打开的指路。
+
+> 这一步的验收标准是**你在剪映里看得见这条片子**：有 computer-use 能力的 agent 会自己在首页点开
+> 这条草稿并截图确认；没有 UI 能力时至少要给你草稿绝对路径 + "首页本地草稿第一项"的明确指路。
 
 **⑦ 需要发给别人时打包**（同样要在剪映关闭时做）
 
@@ -247,6 +254,7 @@ python3 ~/Desktop/skills/footage-to-jianying/scripts/package_draft.py \
 | 文字上下颠倒 | 剪映 `transform_y` **向上为正**，与屏幕坐标相反 |
 | 导不出 mp4 | 本流程只负责出**工程**；macOS 下剪映不支持命令行导出，打开草稿点右上角「导出」 |
 | 没有 OPENAI_API_KEY | 把 `plan.voice.mode` 设为 `"none"`，只出画面 + 字幕（时长按字数估算） |
+| `--open` 提示"没等到剪映打开草稿" | 剪映接受了 `--draft_path` 参数但停在首页（11.5 实测不一定直接进编辑器）。按提示在首页「本地草稿」点开那条草稿即可；agent 有 UI 能力时应当自己点开并截图 |
 
 ---
 
