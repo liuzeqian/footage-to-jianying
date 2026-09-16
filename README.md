@@ -4,6 +4,11 @@
 
 > English: A Codex / WorkBuddy skill that turns raw footage plus a voiceover script into an editable JianYing (CapCut CN) draft — VO, BGM, subtitles, titles, cards and endcard on separate tracks, with per-shot speed ramps and push/pull keyframes baked in.
 
+两个仓库同步维护，挑网络快的一个用：
+
+- Gitee：https://gitee.com/guangzhou-bailichen/footage-to-jianying
+- GitHub：https://github.com/liuzeqian/footage-to-jianying
+
 ---
 
 ## 1. 它会产出什么
